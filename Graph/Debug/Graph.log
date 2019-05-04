@@ -1,6 +1,7 @@
-﻿  Project_graph.cpp
-D:\Programowanie\PWr\Graph\PWr-Graph\Graph\Project_graph.cpp(2): warning C4067: nieoczekiwane tokeny występujące po dyrektywie preprocesora - oczekiwano nowego wiersza
-D:\Programowanie\PWr\Graph\PWr-Graph\Graph\Matrix.h(21): warning C4244: "inicjowanie": konwersja z "float" do "int", możliwa utrata danych
-D:\Programowanie\PWr\Graph\PWr-Graph\Graph\Matrix.h(22): warning C4244: "=": konwersja z "float" do "int", możliwa utrata danych
-Project_graph.obj : error LNK2005: Element "public: __thiscall Matrix::Matrix(int,float)" (??0Matrix@@QAE@HM@Z) jest już zdefiniowany w elemencie Matrix.obj
-D:\Programowanie\PWr\Graph\PWr-Graph\Graph\Debug\Graph.exe : fatal error LNK1169: znaleziono co najmniej jeden wielokrotnie zdefiniowany symbol
+﻿  List.cpp
+  Matrix.cpp
+  Project_graph.cpp
+D:\Programowanie\PWr\Graph\PWr-Graph\Graph\Project_graph.cpp(6): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+  pch.cpp
+  Generowanie kodu...
+  Graph.vcxproj -> D:\Programowanie\PWr\Graph\PWr-Graph\Graph\Debug\Graph.exe

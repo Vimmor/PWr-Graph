@@ -151,11 +151,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="List.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Project_graph.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="List.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
