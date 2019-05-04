@@ -155,11 +155,13 @@
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Project_graph.cpp" />
+    <ClCompile Include="visualization_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="List.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="visualization_test.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

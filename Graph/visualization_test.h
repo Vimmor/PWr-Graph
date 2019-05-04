@@ -5,8 +5,8 @@
 #include "pch.h"
 
 class Visualization_test {
-	List l;
-	Matrix m;
+	List* l;
+	Matrix* m;
 
 public:
 	void test_Matrix(int, int);
