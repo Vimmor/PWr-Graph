@@ -34,11 +34,12 @@ int List::getGestosc() {
 
 void List::connectNodes() {
 	int tmp = lkrawedzi;
+	int wage;
 	if (gestosc < 100) {
 		while (tmp) {
 			int x = rand() % lwierzcholkow;
 			int y = rand() % lwierzcholkow;
-			int wage = rand() % 10 + 1;
+			wage = rand() % 10 + 1;
 			if (x > y && !pom[y][x]) {
 				p = new limb;
 				p->node = x;
@@ -48,7 +49,7 @@ void List::connectNodes() {
 				pom[y][x] = 1;
 				tmp--;
 			}
-			else if(y > x && !pom[x][y]) {
+			 else if(y > x && !pom[x][y]) {
 				p = new limb;
 				p->node = y;
 				p->weight = wage;
@@ -63,7 +64,7 @@ void List::connectNodes() {
 		for (int i = 0; i < lwierzcholkow; i++) {
 			for (int j = 0; j < lwierzcholkow; j++) {
 				if (j > i) {
-					int wage = rand() % 10 + 1;
+				    wage = rand() % 10 + 1;
 					p = new limb;
 					p->node = j;
 					p->weight = wage;
@@ -167,22 +168,24 @@ void List::alg_bellmana_ford() {
 			std::cout << "Wage: " << wage[i] << std::endl;
 		}
 		delete[] stos;
+		delete[] wage;
+		delete[] number;
 	}
 	else
 		std::cout << "There is a negative cycle, try again." << std::endl;
 }
 
-double List::time_test() {
+float List::time_test() {
 	clock_t start, stop;
-	double time;
+	float time;
 	bool check;
 
 	start = std::clock();
 	check = bellman_ford();
 	stop = std::clock();
 
-	if (check) {
-		time = (stop - start) / (double)CLOCKS_PER_SEC;
+	if (check==true) {
+		time = (float)(stop - start) / CLOCKS_PER_SEC;
 		return time;
 	}
 	else

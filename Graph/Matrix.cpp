@@ -93,7 +93,7 @@ bool Matrix::bellman_ford() {
 	for (int i = 1; i <= lwierzcholkow; i++) {
 		for (int j = 0; j < lwierzcholkow; j++) {
 			for (int x = 0; x < lwierzcholkow; x++) {
-				if ((tab[j][x] != 0) && (wage[x] >= wage[j] + tab[j][x])) {
+				if ((tab[j][x] != 0) && (wage[x]) >= (wage[j] + tab[j][x])) {
 					number[x] = j;
 					wage[x] = wage[j] + tab[j][x];
 				}
@@ -130,17 +130,17 @@ void Matrix::alg_bellman_forda() {
 	delete wage;
 }
 
-double Matrix::time_test() {
+float Matrix::time_test() {
 	clock_t start, stop;
-	double time;
+	float time;
 	bool check;
 
 	start = std::clock();
 	check = bellman_ford();
 	stop = std::clock();
 
-	if (check) {
-		time = (stop - start) / (double)CLOCKS_PER_SEC;
+	if (check==true) {
+		time = (float)(stop - start) / CLOCKS_PER_SEC;
 		return time;
 	}
 	else

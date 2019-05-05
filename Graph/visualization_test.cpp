@@ -1,8 +1,9 @@
 #include "visualization_test.h"
 
+// test szybkosci dzialania algorytmu dla macierzy
 void Visualization_test::test_Matrix(int liczbaW, int zageszczenie) {
-	double time_table[INSTANCE_QUANTITY];
-	double sum=0;
+	float time_table[INSTANCE_QUANTITY];
+	float sum=0;
 
 	for (int i = 0; i < INSTANCE_QUANTITY; i++) {
 		m = new Matrix(liczbaW, zageszczenie);
@@ -19,9 +20,10 @@ void Visualization_test::test_Matrix(int liczbaW, int zageszczenie) {
 
 }
 
+//test szybkosci dzialania algorytmu dla listy
 void Visualization_test::test_List(int liczbaW, int zageszczenie) {
-	double time_table[INSTANCE_QUANTITY];
-	double sum=0;
+	float time_table[INSTANCE_QUANTITY];
+	float sum=0;
 
 	for (int i = 0; i < INSTANCE_QUANTITY; i++) {
 		l = new List(liczbaW, zageszczenie);
@@ -37,14 +39,16 @@ void Visualization_test::test_List(int liczbaW, int zageszczenie) {
 	std::cout << "Sredni czas:" << sum / 100 << std::endl;
 }
 
+//menu uzytkownika
 void Visualization_test::menu() {
+	srand(time(NULL));
 	std::cout << "Program realizujacy problem najkrotszej sciezki za pomoca algorytmu Bellmana-Forda" << std::endl;
 	std::cout << "Niezaleznie od wyboru liczby wierzcholkow grafu, algorytm zostanie sprawdzony dla grafow o gestosciach: 25%,50%,75%,100%\n" << std::endl;
 	int choice;
-	int density_table[4] = { 0,25,50,100 };
+	int density_table[4] = {25,50,75,100 };
 	do {
 		std::cout << "1. Test dzialania programu\n";
-		std::cout << "2. Liczba Wiecholkow: 10\n";
+		std::cout << "2. Liczba Wiecholkow: 50\n";
 		std::cout << "3. Liczba Wiecholkow: 100\n";
 		std::cout << "4. Liczba Wiecholkow: 200\n";
 		std::cout << "5. Liczba Wiecholkow: 500\n";
@@ -56,12 +60,15 @@ void Visualization_test::menu() {
 			m = new Matrix(10, 50);
 			m->connectNodes();
 			m->writeMatrix();
+			std::cout << std::endl;
 			m->alg_bellman_forda();
 			m->remove();
+			std::cout << std::endl;
 
 			l = new List(10, 50);
 			l->connectNodes();
 			l->writeList();
+			std::cout << std::endl;
 			l->alg_bellmana_ford();
 			l->remove();
 			

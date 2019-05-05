@@ -35,7 +35,7 @@ public:
 	void alg_bellmana_ford();
 
 	//metoda testujaca czas dzialania algorytmu
-	double time_test();
+	float time_test();
 };
 
 #endif
