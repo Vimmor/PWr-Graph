@@ -1,5 +1,2 @@
-﻿  Project_graph.cpp
-  visualization_test.cpp
-D:\Programowanie\PWr\Graph\PWr-Graph\Graph\visualization_test.cpp(44): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-  Generowanie kodu...
+﻿  Matrix.cpp
   Graph.vcxproj -> D:\Programowanie\PWr\Graph\PWr-Graph\Graph\Debug\Graph.exe

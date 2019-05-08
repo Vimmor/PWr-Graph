@@ -4,10 +4,10 @@
 #include "List.h"
 #include "pch.h"
 
+//Klasa do wykonania testow 
 class Visualization_test {
 	List* l;
 	Matrix* m;
-
 public:
 	void test_Matrix(int, int);
 	void test_List(int, int);

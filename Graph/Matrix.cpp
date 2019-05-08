@@ -26,7 +26,7 @@ int Matrix::getGestosc() {
 int Matrix::getLKrawedzi() {
 	return lkrawedzi;
 }
-
+//laczenie wierzcholkow i przydzielanie wag
 void Matrix::connectNodes() {
 	int tmp = lkrawedzi;
 	if (gestosc < 100) {
@@ -53,13 +53,13 @@ void Matrix::connectNodes() {
 		}
 	}
 }
-
+// zwalnianie pamiec
 void Matrix::remove() {
 	for (int i = 0; i < lwierzcholkow; i++)
 		delete[] tab[i];
 	delete[] tab;
 }
-
+// wypisanie macierzy na standardowe wyjscie
 void Matrix::writeMatrix() {
 
 	std::cout << "Macierz sasiedztwa:";
@@ -80,7 +80,7 @@ void Matrix::writeMatrix() {
 		std::cout << std::endl;
 	}
 }	  
-
+// algorytm bellmana forda
 bool Matrix::bellman_ford() {
 	wage = new int[lwierzcholkow];
 	number = new int[lwierzcholkow];
@@ -107,7 +107,7 @@ bool Matrix::bellman_ford() {
 	}
 	return true;
 }
-
+//metoda wypisuje koszt drogi z zerowego wierzcholka do innych wierzcholkow
 void Matrix::alg_bellman_forda() {
 	int* stos;
 	if (bellman_ford()) {
@@ -129,7 +129,7 @@ void Matrix::alg_bellman_forda() {
 	delete number;
 	delete wage;
 }
-
+//timer
 float Matrix::time_test() {
 	clock_t start, stop;
 	float time;

@@ -108,9 +108,9 @@ void Visualization_test::menu() {
 			break;
 		}
 		case 6: {
-			for (int i = 0; i < 4; i++) {
-				test_Matrix(1000, density_table[i]);
-				test_List(1000, density_table[i]);
+			for (int i = 1; i < 4; i++) {
+				test_Matrix(1000, 100);
+				test_List(1000, 100);
 			}
 			std::cout << std::endl;
 			break;

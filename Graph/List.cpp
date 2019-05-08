@@ -31,10 +31,11 @@ int List::getLkrawedzi() {
 int List::getGestosc() {
 	return gestosc;
 }
-
+//Metoda, ktora laczy wierzcholki ze soba i nadaje im wagi
 void List::connectNodes() {
 	int tmp = lkrawedzi;
 	int wage;
+	limb* p;
 	if (gestosc < 100) {
 		while (tmp) {
 			int x = rand() % lwierzcholkow;
@@ -76,9 +77,10 @@ void List::connectNodes() {
 		}
 	}
 }
-
+// metoda wypisujaca liste na standardowe wyjscie
 void List::writeList() {
 	std::cout << "Lista sasiedztwa:" << std::endl;
+	limb* p = new limb;
 	for (int i = 0; i < lwierzcholkow; i++)
 	{
 		std::cout << "Tab[" << i << "] =";
@@ -104,9 +106,10 @@ void List::writeList() {
 		std::cout << std::endl;
 	}
 }
-
+// zwolnienie pamieci
 void List::remove() {
 	limb* k;
+	limb* p = new limb;
 	for (int i = 0; i < lwierzcholkow; i++) {
 		p = tab[i];
 		while (p) {
@@ -120,8 +123,10 @@ void List::remove() {
 	}
 	delete[] tab;
 	delete[] pom;
+	delete[] wage;
+	delete[] number;
 }
-
+// algorytm bellmana - forda
 bool List::bellman_ford() {
 	limb* tmp;
 
@@ -130,10 +135,10 @@ bool List::bellman_ford() {
 		wage = new int[lwierzcholkow];
 	}
 	for (int i = 0; i < lwierzcholkow; i++) {
-		number[i] = -1;
-		wage[i] = MAX;
+		number[i] = -1; // Oznaczamy w ten sposob brak poprzednika
+		wage[i] = MAX; //standardowo wszystkie ustawiamy na MAX
 	}
-	wage[0] = 0;
+	wage[0] = 0; // wierzcholek startowy 
 
 	for (int i = 0; i < lwierzcholkow; i++) {
 		for (int j = 0; j < lwierzcholkow; j++) {
@@ -151,7 +156,7 @@ bool List::bellman_ford() {
 	}
 	return true;
 }
-
+//metoda wypisuje koszt drogi z zerowego wierzcholka do innych wierzcholkow
 void List::alg_bellmana_ford() {
 	int* stos;
 	if (bellman_ford()) {
@@ -168,13 +173,11 @@ void List::alg_bellmana_ford() {
 			std::cout << "Wage: " << wage[i] << std::endl;
 		}
 		delete[] stos;
-		delete[] wage;
-		delete[] number;
 	}
 	else
 		std::cout << "There is a negative cycle, try again." << std::endl;
 }
-
+//timer
 float List::time_test() {
 	clock_t start, stop;
 	float time;

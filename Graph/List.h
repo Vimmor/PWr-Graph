@@ -16,7 +16,6 @@ class List {
 	int gestosc;
 	int** pom;
 	limb** tab;
-	limb* p;
 	int* wage;
 	int* number;
 
